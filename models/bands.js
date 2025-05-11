@@ -1,31 +1,35 @@
 
 
-class Bands{
+class Bands {
 
-    constructor(){
+    constructor() {
 
         this.bands = [];
 
     }
 
-    addBand(band = new Band()){
+    addBand(band = new Band()) {
         this.bands.push(band);
     }
 
+    getBands() {
+        return this.bands;
+    }
 
-    deleteBand(id = ''){
+
+    deleteBand(id = '') {
         this.bands = this.bands.filter((band) => band.id !== id);
         return this.bands;
     }
 
-    voteBand(id = ''){
+    voteBand(id = '') {
 
         this.bands = this.bands.map(band => {
 
-            if(band.id == id){
+            if (band.id == id) {
                 band.votes++;
                 return band;
-            } else{
+            } else {
                 return band;
             }
 
